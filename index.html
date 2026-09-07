@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="id">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260907-01-1faef54","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script><script src="/_sdk/9e99ecf74af2a081.telemetry_sdk.js" integrity="sha512-tZ7fmfTx2KpCLjXQnEuL9azQ4A5+7+xumsx6r/WYVD0zCP/8LP8hDeCypMQesmP+WyAew4g7l5Ah23Bjd6yoVg=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absensi Digital ULA</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/fbe2ebfd64647c54.data_sdk.js" integrity="sha512-vkTX6CfvpHc3WbjK+tFJCaDuw4ERA4aEV/e5/7+MMJPMTF4RJYCI6CAwJBT/gtDW+dba4uLSsPUgDjVDHWtgUQ=="></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #172333;
+      --navy: #163b5c;
+      --teal: #0b746d;
+      --paper: #f4f1e9;
+      --line: #d9d6cd;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      width: 100%;
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .app-shell {
+      width: 100%;
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      background-image:
+        linear-gradient(rgba(22, 59, 92, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22, 59, 92, .035) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .title-font { font-family: "Fraunces", serif; }
+    .paper-card { box-shadow: 0 16px 40px rgba(24, 42, 55, .08); }
+    .section-rule { border-top: 1px solid var(--line); }
+
+    .number-input {
+      width: 4.5rem;
+      border: 1px solid #cfd5d4;
+      border-radius: .7rem;
+      padding: .55rem .35rem;
+      text-align: center;
+      font-weight: 700;
+      background: #fffdf8;
+      outline: none;
+    }
+
+    .number-input:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(11, 116, 109, .16);
+    }
+
+    .reveal {
+      animation: rise .55s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .row-enter { animation: rowIn .3s ease both; }
+
+    @keyframes rowIn {
+      from { opacity: 0; transform: translateX(-8px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    button:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible {
+      outline: 3px solid rgba(11, 116, 109, .34);
+      outline-offset: 2px;
+    }
+
+    .hidden { display: none !important; }
+
+    /* Setiap kelas memiliki aksen visual agar baris mudah dikenali. */
+    .class-1-a-ula { border-left: 4px solid #0b746d; background: linear-gradient(90deg, #eef8f4, #fffdf8 18%); }
+    .class-1-a-ula .student-class { background: #d9efea; color: #0b746d; }
+    .class-1-b-ula { border-left: 4px solid #2864a2; background: linear-gradient(90deg, #eef5fd, #fffdf8 18%); }
+    .class-1-b-ula .student-class { background: #dceafb; color: #2864a2; }
+    .class-1-c-ula { border-left: 4px solid #a55d12; background: linear-gradient(90deg, #fff7e7, #fffdf8 18%); }
+    .class-1-c-ula .student-class { background: #f8e8c7; color: #a55d12; }
+    .class-2-a-ula { border-left: 4px solid #7b4fa3; background: linear-gradient(90deg, #f4edfb, #fffdf8 18%); }
+    .class-2-a-ula .student-class { background: #eadcf7; color: #7b4fa3; }
+    .class-2-b-ula { border-left: 4px solid #b44040; background: linear-gradient(90deg, #fff0f0, #fffdf8 18%); }
+    .class-2-b-ula .student-class { background: #f8dada; color: #b44040; }
+    .class-2-c-ula { border-left: 4px solid #26756b; background: linear-gradient(90deg, #e8f5f1, #fffdf8 18%); }
+    .class-2-c-ula .student-class { background: #d4eee7; color: #26756b; }
+    .class-3-a-ula { border-left: 4px solid #c05a86; background: linear-gradient(90deg, #fcecf3, #fffdf8 18%); }
+    .class-3-a-ula .student-class { background: #f6dce8; color: #a23f6c; }
+    .class-3-b-ula { border-left: 4px solid #527a45; background: linear-gradient(90deg, #eff6e9, #fffdf8 18%); }
+    .class-3-b-ula .student-class { background: #dfeeda; color: #527a45; }
+    .class-3-c-ula { border-left: 4px solid #c27b19; background: linear-gradient(90deg, #fff4dc, #fffdf8 18%); }
+    .class-3-c-ula .student-class { background: #f9e5b9; color: #9a5d0d; }
+
+    @media (max-width: 640px) {
+      .number-input { width: 3.7rem; }
+      .attendance-grid { min-width: 660px; }
+    }
+  </style>
+  <script src="/_sdk/fcb6dc01f91829ac.resizing_sdk.js" type="text/javascript" integrity="sha512-YK8JfnN705qaEaVhiL7pcVB2Rs/BbdX5yxV55Az8zT/1JanyEWTw9HqCF915m9iV1YEaoil8qsjJz03l1Kb0Ug=="></script>
+ </head>
+ <body data-template-id="__page-root">
+  <div class="app-shell">
+   <header data-template-id="app-header" class="canva-header border-b border-slate-200/80 bg-[#163b5c]">
+    <div class="mx-auto flex max-w-7xl items-center gap-4 px-5 py-6 sm:px-8">
+     <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#f1bd61] text-[#163b5c] shadow-lg"><i data-lucide="clipboard-check" aria-hidden="true"></i>
+     </div>
+     <div>
+      <p data-template-id="header-eyebrow" class="canva-text mb-1 text-xs font-bold uppercase tracking-[.18em]"></p>
+      <h1 data-template-id="app-title" class="canva-text title-font leading-tight"></h1>
+     </div>
+    </div>
+   </header>
+   <main class="mx-auto w-full max-w-7xl px-5 py-7 sm:px-8 sm:py-10">
+    <section class="reveal mb-7 grid gap-5 lg:grid-cols-[1.05fr_.95fr]">
+     <article data-template-id="intro-panel" class="canva-panel paper-card rounded-[1.5rem] border border-[#d8d3c6] p-6 sm:p-8">
+      <p data-template-id="intro-kicker" class="canva-text mb-3 text-xs font-bold uppercase tracking-[.16em]"></p>
+      <h2 data-template-id="intro-title" class="canva-text title-font mb-3 leading-tight"></h2>
+      <p data-template-id="intro-description" class="canva-text max-w-xl leading-7"></p>
+     </article>
+     <aside data-template-id="period-panel" class="canva-panel paper-card rounded-[1.5rem] border border-[#c9d8d7] p-6 sm:p-8">
+      <div class="mb-5 flex items-center gap-3">
+       <div class="rounded-xl bg-[#d9efea] p-2 text-[#0b746d]"><i data-lucide="calendar-days" width="22" height="22" aria-hidden="true"></i>
+       </div>
+       <h2 data-template-id="period-title" class="canva-text font-bold"></h2>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+       <div><label data-template-id="month-label" class="canva-text mb-2 block text-sm font-semibold" for="month-select"></label> <select id="month-select" class="w-full rounded-xl border border-[#cfd5d4] bg-white px-3 py-3 text-sm font-semibold text-[#172333]"> <option value="Januari">Januari</option> <option value="Februari">Februari</option> <option value="Maret">Maret</option> <option value="April">April</option> <option value="Mei">Mei</option> <option value="Juni">Juni</option> <option value="Juli">Juli</option> <option value="Agustus">Agustus</option> <option value="September">September</option> <option value="Oktober">Oktober</option> <option value="November">November</option> <option value="Desember">Desember</option> </select>
+       </div>
+       <div><label data-template-id="year-label" class="canva-text mb-2 block text-sm font-semibold" for="year-select"></label> <select id="year-select" class="w-full rounded-xl border border-[#cfd5d4] bg-white px-3 py-3 text-sm font-semibold text-[#172333]"></select>
+       </div>
+      </div>
+      <p data-template-id="period-helper" class="canva-text mt-4 text-sm leading-6"></p>
+     </aside>
+    </section>
+    <section class="reveal mb-7" style="animation-delay:.08s">
+     <div class="mb-3 flex items-end justify-between gap-4">
+      <div>
+       <p data-template-id="summary-kicker" class="canva-text text-xs font-bold uppercase tracking-[.16em]"></p>
+       <h2 data-template-id="summary-title" class="canva-text title-font mt-1"></h2>
+      </div><span id="period-badge" class="rounded-full bg-[#e8ece9] px-4 py-2 text-xs font-bold text-[#38505a]"></span>
+     </div>
+     <div class="grid grid-cols-2 gap-3 sm:grid-cols-5">
+      <article data-template-id="summary-students" class="canva-card rounded-2xl border border-[#d8d3c6] p-4 sm:p-5">
+       <p data-template-id="summary-students-label" class="canva-text text-xs font-bold uppercase tracking-wide"></p>
+       <p id="student-total" class="mt-2 text-3xl font-bold text-[#163b5c]" aria-live="polite">0</p>
+      </article>
+      <article data-template-id="summary-hadir" class="canva-card rounded-2xl border border-[#bfdfd7] p-4 sm:p-5">
+       <p data-template-id="summary-hadir-label" class="canva-text text-xs font-bold uppercase tracking-wide"></p>
+       <p id="hadir-total" class="mt-2 text-3xl font-bold text-[#0b746d]" aria-live="polite">0</p>
+      </article>
+      <article data-template-id="summary-sakit" class="canva-card rounded-2xl border border-[#f1d5a4] p-4 sm:p-5">
+       <p data-template-id="summary-sakit-label" class="canva-text text-xs font-bold uppercase tracking-wide"></p>
+       <p id="sakit-total" class="mt-2 text-3xl font-bold text-[#a55d12]" aria-live="polite">0</p>
+      </article>
+      <article data-template-id="summary-izin" class="canva-card rounded-2xl border border-[#c8d8f1] p-4 sm:p-5">
+       <p data-template-id="summary-izin-label" class="canva-text text-xs font-bold uppercase tracking-wide"></p>
+       <p id="izin-total" class="mt-2 text-3xl font-bold text-[#2864a2]" aria-live="polite">0</p>
+      </article>
+      <article data-template-id="summary-alpa" class="canva-card col-span-2 rounded-2xl border border-[#f0c9c9] p-4 sm:col-span-1 sm:p-5">
+       <p data-template-id="summary-alpa-label" class="canva-text text-xs font-bold uppercase tracking-wide"></p>
+       <p id="alpa-total" class="mt-2 text-3xl font-bold text-[#b44040]" aria-live="polite">0</p>
+      </article>
+     </div>
+    </section>
+    <section class="reveal mb-7 grid gap-6 lg:grid-cols-[.9fr_1.1fr]" style="animation-delay:.14s">
+     <article data-template-id="add-panel" class="canva-panel paper-card rounded-[1.5rem] border border-[#d8d3c6] p-6 sm:p-8">
+      <div class="mb-5 flex items-center gap-3">
+       <div class="rounded-xl bg-[#f8e8c7] p-2 text-[#9b5b15]"><i data-lucide="user-plus" width="22" height="22" aria-hidden="true"></i>
+       </div>
+       <div>
+        <h2 data-template-id="add-title" class="canva-text font-bold"></h2>
+        <p data-template-id="add-helper" class="canva-text mt-1 text-sm"></p>
+       </div>
+      </div>
+      <form id="roster-form"><label data-template-id="class-input-label" class="canva-text mb-2 block text-sm font-semibold" for="add-class-select"></label> <select id="add-class-select" class="mb-4 w-full rounded-xl border border-[#cfd5d4] bg-white px-3 py-3 text-sm font-semibold text-[#172333]"> <option value="1 A ULA">1 A ULA</option> <option value="1 B ULA">1 B ULA</option> <option value="1 C ULA">1 C ULA</option> <option value="2 A ULA">2 A ULA</option> <option value="2 B ULA">2 B ULA</option> <option value="2 C ULA">2 C ULA</option> <option value="3 A ULA">3 A ULA</option> <option value="3 B ULA">3 B ULA</option> <option value="3 C ULA">3 C ULA</option> </select> <label data-template-id="names-label" class="canva-text mb-2 block text-sm font-semibold" for="names-input"></label> <textarea id="names-input" rows="7" class="w-full resize-y rounded-xl border border-[#cfd5d4] bg-white px-4 py-3 text-sm leading-6 text-[#172333]" placeholder="Contoh:
+Aisyah Putri
+Bima Pratama"></textarea> <button id="add-roster-button" data-template-id="add-roster-button" class="canva-button mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 font-bold transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60" type="submit"> <i data-lucide="plus" width="18" height="18" aria-hidden="true"></i> <span data-template-id="add-roster-button-text" class="canva-text"></span> </button>
+      </form>
+     </article>
+     <article data-template-id="guide-panel" class="canva-panel rounded-[1.5rem] border border-[#c8d8d4] p-6 sm:p-8">
+      <p data-template-id="guide-kicker" class="canva-text text-xs font-bold uppercase tracking-[.16em]"></p>
+      <h2 data-template-id="guide-title" class="canva-text title-font mt-2"></h2>
+      <ol class="mt-5 space-y-4">
+       <li class="flex gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0b746d] text-xs font-bold text-white">1</span> <p data-template-id="guide-step-one" class="canva-text pt-1 text-sm leading-6"></p></li>
+       <li class="flex gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0b746d] text-xs font-bold text-white">2</span> <p data-template-id="guide-step-two" class="canva-text pt-1 text-sm leading-6"></p></li>
+       <li class="flex gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0b746d] text-xs font-bold text-white">3</span> <p data-template-id="guide-step-three" class="canva-text pt-1 text-sm leading-6"></p></li>
+      </ol>
+     </article>
+    </section>
+    <section class="reveal" style="animation-delay:.2s">
+     <div class="mb-4 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+      <div>
+       <p data-template-id="list-kicker" class="canva-text text-xs font-bold uppercase tracking-[.16em]"></p>
+       <h2 data-template-id="list-title" class="canva-text title-font mt-1"></h2>
+      </div>
+      <div class="w-full sm:w-56"><label data-template-id="filter-label" class="canva-text mb-2 block text-sm font-semibold" for="filter-class-select"></label> <select id="filter-class-select" class="w-full rounded-xl border border-[#cfd5d4] bg-white px-3 py-2.5 text-sm font-semibold text-[#172333]"> <option value="Semua Kelas">Semua Kelas</option> <option value="1 A ULA">1 A ULA</option> <option value="1 B ULA">1 B ULA</option> <option value="1 C ULA">1 C ULA</option> <option value="2 A ULA">2 A ULA</option> <option value="2 B ULA">2 B ULA</option> <option value="2 C ULA">2 C ULA</option> <option value="3 A ULA">3 A ULA</option> <option value="3 B ULA">3 B ULA</option> <option value="3 C ULA">3 C ULA</option> </select>
+      </div>
+     </div>
+     <p id="feedback" class="mb-4 hidden rounded-xl px-4 py-3 text-sm font-medium" role="status" aria-live="polite"></p>
+     <div class="paper-card overflow-x-auto rounded-[1.5rem] border border-[#d8d3c6] bg-[#fffdf8]">
+      <div class="attendance-grid min-w-[700px]">
+       <div class="grid grid-cols-[2.2fr_1fr_.75fr_.75fr_.75fr_.75fr_1.2fr] items-center gap-3 border-b border-[#ded9cd] bg-[#e9eee9] px-5 py-4 text-xs font-bold uppercase tracking-wide text-[#38505a]"><span data-template-id="col-name" class="canva-text"></span> <span data-template-id="col-class" class="canva-text"></span> <span data-template-id="col-hadir" class="canva-text text-center"></span> <span data-template-id="col-sakit" class="canva-text text-center"></span> <span data-template-id="col-izin" class="canva-text text-center"></span> <span data-template-id="col-alpa" class="canva-text text-center"></span> <span data-template-id="col-action" class="canva-text text-center"></span>
+       </div>
+       <div id="attendance-list"></div>
+       <div id="empty-state" class="px-6 py-14 text-center"><i data-lucide="notebook-tabs" class="mx-auto mb-3 text-[#8aa19a]" width="34" height="34" aria-hidden="true"></i>
+        <h3 data-template-id="empty-title" class="canva-text font-bold"></h3>
+        <p data-template-id="empty-description" class="canva-text mx-auto mt-2 max-w-md text-sm leading-6"></p>
+       </div>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="mx-auto w-full max-w-7xl px-5 pb-8 pt-4 sm:px-8">
+    <p data-template-id="footer-text" class="canva-text text-center text-xs"></p>
+   </footer>
+  </div>
+  <template id="attendance-row-template">
+   <article data-template-id="attendance-row" class="canva-card row-enter grid grid-cols-[2.2fr_1fr_.75fr_.75fr_.75fr_.75fr_1.2fr] items-center gap-3 border-b border-[#e5e1d7] px-5 py-4 last:border-b-0">
+    <div class="min-w-0">
+     <p class="student-name truncate font-bold text-[#172333]"></p>
+    </div><span class="student-class inline-flex w-fit rounded-full bg-[#e7f0ed] px-2.5 py-1 text-xs font-bold text-[#357064]"></span>
+    <div class="text-center">
+     <input class="number-input hadir-input" aria-label="Jumlah hadir" type="number" min="0" value="0">
+    </div>
+    <div class="text-center">
+     <input class="number-input sakit-input" aria-label="Jumlah sakit" type="number" min="0" value="0">
+    </div>
+    <div class="text-center">
+     <input class="number-input izin-input" aria-label="Jumlah izin" type="number" min="0" value="0">
+    </div>
+    <div class="text-center">
+     <input class="number-input alpa-input" aria-label="Jumlah alpa" type="number" min="0" value="0">
+    </div>
+    <div class="flex justify-center gap-2"><button data-template-id="save-row-button" class="canva-button save-row-button rounded-lg px-3 py-2 text-xs font-bold transition hover:brightness-95 disabled:opacity-50" type="button"></button> <button data-template-id="delete-row-button" class="canva-button delete-row-button rounded-lg px-3 py-2 text-xs font-bold transition hover:brightness-95" type="button"></button>
+     <div class="delete-confirm hidden items-center gap-1"><button data-template-id="confirm-delete-button" class="canva-button confirm-delete-button rounded-lg px-2 py-2 text-xs font-bold" type="button"></button> <button data-template-id="cancel-delete-button" class="canva-button cancel-delete-button rounded-lg px-2 py-2 text-xs font-bold" type="button"></button>
+     </div>
+    </div>
+   </article>
+  </template>
+  <script src="/_sdk/5629ea66dc55d54f.editing_sdk.js" integrity="sha512-snPYzGvgiTEMUBOb+HlCBkFeiM0IRX4hcgA78wvalhC0WnJtaX+RCbosPWtNqZsZ7sZ9NwN0oePZYa+IlMwa+w=="></script>
+  <script>
+    const currentDate = new Date();
+    const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+    let records = [];
+    let sdkReady = false;
+
+    const monthSelect = document.getElementById("month-select");
+    const yearSelect = document.getElementById("year-select");
+    const filterClassSelect = document.getElementById("filter-class-select");
+    const attendanceList = document.getElementById("attendance-list");
+    const emptyState = document.getElementById("empty-state");
+    const feedback = document.getElementById("feedback");
+
+    function safeNumber(value) {
+      return Math.max(0, Number.parseInt(value, 10) || 0);
+    }
+
+    function selectedPeriod() {
+      return { bulan: monthSelect.value, tahun: Number(yearSelect.value) };
+    }
+
+    function showFeedback(message, type) {
+      feedback.textContent = message;
+      feedback.className = "mb-4 rounded-xl px-4 py-3 text-sm font-medium";
+      feedback.classList.add(type === "error" ? "bg-[#fce8e8]" : "bg-[#e0f2eb]");
+      feedback.classList.add(type === "error" ? "text-[#9f2929]" : "text-[#126657]");
+    }
+
+    function clearFeedback() {
+      feedback.className = "mb-4 hidden rounded-xl px-4 py-3 text-sm font-medium";
+      feedback.textContent = "";
+    }
+
+    function matchesCurrentView(record) {
+      const period = selectedPeriod();
+      const filter = filterClassSelect.value;
+      return record.bulan === period.bulan &&
+        Number(record.tahun) === period.tahun &&
+        (filter === "Semua Kelas" || record.kelas === filter);
+    }
+
+    function renderSummary() {
+      const visible = records.filter(matchesCurrentView);
+      const sum = key => visible.reduce((total, record) => total + safeNumber(record[key]), 0);
+      document.getElementById("student-total").textContent = visible.length;
+      document.getElementById("hadir-total").textContent = sum("hadir");
+      document.getElementById("sakit-total").textContent = sum("sakit");
+      document.getElementById("izin-total").textContent = sum("izin");
+      document.getElementById("alpa-total").textContent = sum("alpa");
+      document.getElementById("period-badge").textContent = `${monthSelect.value} ${yearSelect.value}`;
+    }
+
+    function classStyleName(kelas) {
+      return `class-${kelas.toLocaleLowerCase("id-ID").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
+    }
+
+    function applyClassStyle(row, kelas) {
+      [...row.classList].filter(name => name.startsWith("class-")).forEach(name => row.classList.remove(name));
+      row.classList.add(classStyleName(kelas));
+    }
+
+    function createRow(record) {
+      const fragment = document.getElementById("attendance-row-template").content.cloneNode(true);
+      const row = fragment.querySelector("[data-template-id='attendance-row']");
+      row.dataset.recordId = record.__backendId;
+      applyClassStyle(row, record.kelas);
+      row.querySelector(".student-name").textContent = record.nama;
+      row.querySelector(".student-class").textContent = record.kelas;
+      row.querySelector(".hadir-input").value = safeNumber(record.hadir);
+      row.querySelector(".sakit-input").value = safeNumber(record.sakit);
+      row.querySelector(".izin-input").value = safeNumber(record.izin);
+      row.querySelector(".alpa-input").value = safeNumber(record.alpa);
+
+      row.querySelector(".save-row-button").addEventListener("click", () => saveRow(row, record.__backendId));
+      row.querySelector(".delete-row-button").addEventListener("click", () => toggleDelete(row, true));
+      row.querySelector(".cancel-delete-button").addEventListener("click", () => toggleDelete(row, false));
+      row.querySelector(".confirm-delete-button").addEventListener("click", () => deleteRow(row, record.__backendId));
+      return row;
+    }
+
+    function updateRow(row, record) {
+      applyClassStyle(row, record.kelas);
+      row.querySelector(".student-name").textContent = record.nama;
+      row.querySelector(".student-class").textContent = record.kelas;
+      if (document.activeElement !== row.querySelector(".hadir-input")) row.querySelector(".hadir-input").value = safeNumber(record.hadir);
+      if (document.activeElement !== row.querySelector(".sakit-input")) row.querySelector(".sakit-input").value = safeNumber(record.sakit);
+      if (document.activeElement !== row.querySelector(".izin-input")) row.querySelector(".izin-input").value = safeNumber(record.izin);
+      if (document.activeElement !== row.querySelector(".alpa-input")) row.querySelector(".alpa-input").value = safeNumber(record.alpa);
+    }
+
+    function renderRecords() {
+      const visible = records.filter(matchesCurrentView).sort((a, b) => a.nama.localeCompare(b.nama, "id"));
+      const existing = new Map([...attendanceList.children].map(row => [row.dataset.recordId, row]));
+
+      visible.forEach(record => {
+        const row = existing.get(record.__backendId);
+        if (row) {
+          updateRow(row, record);
+          existing.delete(record.__backendId);
+        } else {
+          attendanceList.appendChild(createRow(record));
+        }
+      });
+
+      existing.forEach(row => row.remove());
+      emptyState.classList.toggle("hidden", visible.length > 0);
+      renderSummary();
+    }
+
+    function toggleDelete(row, show) {
+      row.querySelector(".delete-row-button").classList.toggle("hidden", show);
+      row.querySelector(".save-row-button").classList.toggle("hidden", show);
+      row.querySelector(".delete-confirm").classList.toggle("hidden", !show);
+      row.querySelector(".delete-confirm").classList.toggle("flex", show);
+    }
+
+    async function saveRow(row, recordId) {
+      const record = records.find(item => item.__backendId === recordId);
+      if (!record || !sdkReady) return;
+
+      const saveButton = row.querySelector(".save-row-button");
+      saveButton.disabled = true;
+      const updatedRecord = {
+        ...record,
+        hadir: safeNumber(row.querySelector(".hadir-input").value),
+        sakit: safeNumber(row.querySelector(".sakit-input").value),
+        izin: safeNumber(row.querySelector(".izin-input").value),
+        alpa: safeNumber(row.querySelector(".alpa-input").value)
+      };
+
+      const result = await window.dataSdk.update(updatedRecord);
+      saveButton.disabled = false;
+
+      if (result.isOk) {
+        clearFeedback();
+        showFeedback("Absen telah terkirim. Data absensi siswa berhasil disimpan.", "success");
+      } else {
+        showFeedback("Data belum dapat disimpan. Silakan coba lagi.", "error");
+      }
+    }
+
+    async function deleteRow(row, recordId) {
+      const record = records.find(item => item.__backendId === recordId);
+      if (!record || !sdkReady) return;
+
+      const confirmButton = row.querySelector(".confirm-delete-button");
+      confirmButton.disabled = true;
+      const result = await window.dataSdk.delete(record);
+
+      if (!result.isOk) {
+        confirmButton.disabled = false;
+        showFeedback("Data belum dapat dihapus. Silakan coba lagi.", "error");
+      } else {
+        showFeedback("Data siswa berhasil dihapus.", "success");
+      }
+    }
+
+    function parseNames(rawValue) {
+      const unique = new Set();
+      return rawValue
+        .split(/\r?\n/)
+        .map(line => line.split("\t")[0].trim())
+        .filter(name => {
+          const normalized = name.toLocaleLowerCase("id-ID");
+          if (!name || unique.has(normalized)) return false;
+          unique.add(normalized);
+          return true;
+        });
+    }
+
+    function pause(milliseconds) {
+      return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
+
+    document.getElementById("roster-form").addEventListener("submit", async event => {
+      event.preventDefault();
+      clearFeedback();
+
+      if (!sdkReady) {
+        showFeedback("Aplikasi masih menyiapkan data. Silakan tunggu sebentar.", "error");
+        return;
+      }
+
+      const input = document.getElementById("names-input");
+      const names = parseNames(input.value);
+      const button = document.getElementById("add-roster-button");
+      const period = selectedPeriod();
+      const kelas = document.getElementById("add-class-select").value;
+
+      if (!names.length) {
+        showFeedback("Masukkan setidaknya satu nama siswa terlebih dahulu.", "error");
+        input.focus();
+        return;
+      }
+
+      if (records.length + names.length > 999) {
+        showFeedback("Batas maksimal 999 data telah tercapai. Hapus beberapa data terlebih dahulu.", "error");
+        return;
+      }
+
+      button.disabled = true;
+      let successCount = 0;
+
+      for (let index = 0; index < names.length; index++) {
+        const duplicate = records.some(item =>
+          item.nama.toLocaleLowerCase("id-ID") === names[index].toLocaleLowerCase("id-ID") &&
+          item.kelas === kelas &&
+          item.bulan === period.bulan &&
+          Number(item.tahun) === period.tahun
+        );
+
+        if (!duplicate) {
+          const result = await window.dataSdk.create({
+            nama: names[index],
+            kelas,
+            bulan: period.bulan,
+            tahun: period.tahun,
+            hadir: 0,
+            sakit: 0,
+            izin: 0,
+            alpa: 0
+          });
+          if (result.isOk) successCount++;
+          await pause(550);
+        }
+      }
+
+      button.disabled = false;
+      input.value = "";
+      if (successCount > 0) {
+        filterClassSelect.value = kelas;
+        showFeedback(`${successCount} nama siswa berhasil ditambahkan ke ${kelas}.`, "success");
+      } else {
+        showFeedback("Tidak ada data baru ditambahkan. Nama tersebut mungkin sudah ada pada periode ini.", "error");
+      }
+    });
+
+    [monthSelect, yearSelect, filterClassSelect].forEach(element => {
+      element.addEventListener("change", () => {
+        clearFeedback();
+        renderRecords();
+      });
+    });
+
+    async function initializeApp() {
+      const monthIndex = currentDate.getMonth();
+      monthSelect.value = monthNames[monthIndex];
+
+      for (let year = currentDate.getFullYear() - 1; year <= currentDate.getFullYear() + 2; year++) {
+        const option = document.createElement("option");
+        option.value = year;
+        option.textContent = year;
+        if (year === currentDate.getFullYear()) option.selected = true;
+        yearSelect.appendChild(option);
+      }
+
+      lucide.createIcons();
+      renderSummary();
+
+      const handler = {
+        onDataChanged(data) {
+          records = data;
+          renderRecords();
+        }
+      };
+
+      const initResult = await window.dataSdk.init(handler);
+      if (initResult.isOk) {
+        sdkReady = true;
+      } else {
+        showFeedback("Data absensi belum dapat dimuat. Silakan muat ulang aplikasi.", "error");
+      }
+    }
+
+    initializeApp();
+  </script>
+ </body>
+</html>
